@@ -1,6 +1,6 @@
 # Squad Manager API
 
-A REST API built with Spring Boot 3 to manage football teams, players, matches, and match sheets.
+A REST API built with Spring Boot 4 to manage football teams, players, matches, and match sheets.
 
 This project is the backend rewrite of [gestion-equipe-foot](https://github.com/leul-mulugeta/gestion-equipe-foot), transitioning from a PHP prototype to an API supporting multiple teams with isolated data.
 
@@ -15,29 +15,38 @@ This project is the backend rewrite of [gestion-equipe-foot](https://github.com/
 - **Language**: Java 21
 - **Framework**: Spring Boot 4.1.1
 - **Database**: MySQL
+- **Containerization**: Docker Compose
 - **Build Tool**: Maven Wrapper
 
 ## Getting Started
 
 ### Prerequisites
 - JDK 21+
+- A running MySQL database, either:
+  - **Docker** (recommended: Spring Boot starts the database automatically via Docker Compose)
+  - **A standalone MySQL server**
 
 ### Run Locally
 1. Clone the repository:
-```bash
+```powershell
 git clone https://github.com/leul-mulugeta/squad-manager-api.git
 cd squad-manager-api
 ```
 
-2. Start the application (PowerShell):
-```bash
+2. Create your `.env` configuration file:
+```powershell
+cp .env.example .env
+```
+
+3. Start the application (PowerShell):
+```powershell
 .\mvnw.cmd spring-boot:run
 ```
 
 The application runs by default on `http://localhost:8080`.
 
-3. Test the verification endpoint:
-```bash
+4. Test the verification endpoint:
+```powershell
 curl http://localhost:8080/bonjour
 # Output: Bonjour le monde !
 ```
