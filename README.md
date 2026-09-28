@@ -37,11 +37,14 @@ cd squad-manager-api
 ```powershell
 cp .env.example .env
 ```
+- **With Docker (recommended)**: Default values work out of the box (`DOCKER_ENABLED=true`).
+- **With standalone MySQL**: Set `DOCKER_ENABLED=false` and adjust credentials (`DB_HOST`, `DB_PORT`, etc.) if needed.
 
 3. Start the application (PowerShell):
 ```powershell
 .\mvnw.cmd spring-boot:run
 ```
+*(You can also simply run the application using your IDE's Run button).*
 
 The application runs by default on `http://localhost:8080`.
 
