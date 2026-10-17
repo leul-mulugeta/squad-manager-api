@@ -17,6 +17,7 @@ This project is the backend rewrite of [gestion-equipe-foot](https://github.com/
 - **Database**: MySQL
 - **Containerization**: Docker Compose
 - **Build Tool**: Maven Wrapper
+- **Testing**: JUnit Jupiter, Mockito, AssertJ, and Spring MockMvc
 
 ## Getting Started
 
@@ -52,6 +53,22 @@ The application runs by default on `http://localhost:8080`.
 ```powershell
 curl http://localhost:8080/bonjour
 # Output: Bonjour le monde !
+```
+
+## Tests
+
+Run the full test suite:
+
+```powershell
+.\mvnw.cmd test
+```
+
+MySQL must be running for the application context test (`@SpringBootTest`). With Docker, start the database first using `docker compose up -d db` and wait until MySQL is ready.
+
+To run specific test classes, list their names without the `.java` extension, separated by commas:
+
+```powershell
+.\mvnw.cmd "-Dtest=FirstTestClass,SecondTestClass" test
 ```
 
 ## License

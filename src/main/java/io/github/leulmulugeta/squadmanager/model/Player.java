@@ -3,17 +3,16 @@ package io.github.leulmulugeta.squadmanager.model;
 import io.github.leulmulugeta.squadmanager.model.enums.PlayerPosition;
 import io.github.leulmulugeta.squadmanager.model.enums.PlayerStatus;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
