@@ -55,6 +55,10 @@ curl http://localhost:8080/bonjour
 # Output: Bonjour le monde !
 ```
 
+## API Documentation
+
+Once the application is running, interactive API documentation is available through [Swagger UI](http://localhost:8080/swagger-ui.html).
+
 ## Tests
 
 Run the full test suite:
