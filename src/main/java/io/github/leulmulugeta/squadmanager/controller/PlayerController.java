@@ -1,8 +1,10 @@
 package io.github.leulmulugeta.squadmanager.controller;
 
-import io.github.leulmulugeta.squadmanager.model.Player;
-import io.github.leulmulugeta.squadmanager.repository.PlayerRepository;
+import io.github.leulmulugeta.squadmanager.dto.PlayerResponse;
+import io.github.leulmulugeta.squadmanager.service.PlayerService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,10 +16,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PlayerController {
 
-    private final PlayerRepository playerRepository;
+    private final PlayerService playerService;
 
     @GetMapping
-    public List<Player> getAllPlayers() {
-        return playerRepository.findAll();
+    public ResponseEntity<List<PlayerResponse>> getAllPlayers() {
+        List<PlayerResponse> response = playerService.getAllPlayers();
+        return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 }
